@@ -76,3 +76,70 @@ undefined는 변수가 선언되었으나 현재 아무런 값도 할당되지 �
 1. <a name="number1"></a> 컴퓨터가 실수를 이해할 수 있도록 부동 소수점 방식을 사용해 실수를 표현한다. 이는 부호(S), 지수(E), 가수(M) 형태로 메모리에 저장된다. 참고로 C에서 double은 배정밀도(부호 1비트, 지수 11비트, 가수 52비트로 총 64비트) 표준 포맷으로, float는 단정밀도 표준 포맷(부호 1 비트, 지수 8 비트, 가수 23 비트로 총 32비트)으로 나타낸다.
 2. <a name="number2"></a> 머신 입실론은 컴퓨터가 이해할 수 있는 가장 작은 숫자 단위이다. 자바스크립트 숫자의 머신 입실론은 2<sup>-52</sup>이다.
    </details>
+
+<details><summary>로컬 스토리지 vs 세션 스토리지 vs 쿠키</summary>
+
+## 로컬 스토리지(LocalStorage)
+
+- 저장되는 데이터의 만료 기간이 없다.
+- 웹페이지를 닫아도 저장된 데이터는 삭제되지 않는다.
+- 자바스크립트로 삭제하거나 브라우저 캐시 / 로컬 저장된 데이터를 클리어하여 삭제해야 한다.
+- 저장할 수 있는 공간은 세션 스토리지, 쿠키보다 크다.
+- 클라이언트에서만 사용할 수 있다.
+
+## 세션 스토리지(SessionStorage)
+
+- 저장되는 데이터의 만료 기간이 있다.
+- 웹페이지를 닫으면 저장된 데이터는 삭제된다.(세션이 끝나면 삭제된다)
+- 저장할 수 있는 공간은 쿠키보다 크다.(최소 5MB)
+- 클라이언트에서만 사용할 수 있다.
+
+## 쿠키(Cookie)
+
+- 만료 기간이 있으며 이는 서버 또는 클라이언트에서 설정할 수 있다.(보통 서버에서 설정한다)
+- 주로 서버로 전송해야할 데이터를 저장한다.
+- 저장할 수있는 공간은 쿠키당 4096자(4KB)으로 제한된다.
+- 클라이언트뿐만 아니라 서버에서도 사용할 수 있다.
+- 쿠키에 httpOnly 플래그를 설정하여 쿠키의 보안을 높일 수 있다. 이는 쿠키에 대한 클라이언트의 접근을 차단한다.
+
+## 비교
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>만료 기간</th>
+      <th>저장 크기 제한</th>
+      <th>삭제 방법</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>로컬 스토리지</td>
+      <td>X</td>
+      <td>최소 5MB</td>
+      <td>자바스크립트 또는 브라우저 기능</td>
+    </tr>
+    <tr>
+      <td>세션 스토리지</td>
+      <td>O</td>
+      <td>최소 5MB</td>
+      <td>세션 종료(브라우저 닫기)</td>
+    </tr>
+    <tr>
+      <td>쿠키</td>
+      <td>O</td>
+      <td>최대 4KB</td>
+      <td>자바스크립트 또는 브라우저 기능</td>
+    </tr>
+  </tbody>
+</table>
+
+## 참고 자료
+
+- [LocalStorage vs SessionStorage vs Cookies - Renat Galyamov](https://renatello.com/code/localstorage-vs-sessionstorage-vs-cookies/ 'LocalStorage vs SessionStorage vs Cookies')
+- [Local Storage vs Session Storage vs Cookie - Pratyush](https://scotch.io/@PratyushB/local-storage-vs-session-storage-vs-cookie 'Local Storage vs Session Storage vs Cookie')
+
+---
+
+   </details>
