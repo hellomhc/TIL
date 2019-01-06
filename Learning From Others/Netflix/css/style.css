@@ -1,0 +1,283 @@
+html,
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.05)),
+    url('../img/background-netflix-header.jpg');
+  height: 100vh;
+}
+
+header nav {
+  height: 90px;
+}
+
+header nav a.logo img {
+  width: 167px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+header nav a.logo {
+  display: inline-block;
+  line-height: 90px;
+  margin-left: 3%;
+}
+
+header nav a.signin {
+  color: #fff;
+  float: right;
+  background-color: #e50914;
+  line-height: normal;
+  margin-top: 18px;
+  margin-right: 3%;
+  padding: 7px 17px;
+  font-weight: 400;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+header section.pitch {
+  margin: 0 3%;
+  position: absolute;
+  top: 35%;
+  font-size: 1.8vw;
+}
+
+header section.pitch .pitch__title {
+  font-size: 3em;
+  margin: 0 0 0.2em;
+  font-weight: 700;
+}
+
+header section.pitch .pitch__subtitle {
+  margin: 0 0 0.5em;
+}
+
+.btn {
+  font-size: 14px;
+  letter-spacing: 1.9px;
+  font-weight: 400;
+  margin: 0.5em 0.5em 0.5em 0;
+  padding: 12px 2em;
+  color: #fff;
+  background-color: #e50914;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: middle;
+  font-family: Arial, sans-serif;
+  border-radius: 2px;
+  user-select: none;
+  text-align: center;
+  border: 0;
+}
+
+.btn-large {
+  padding: 18px 20px;
+}
+
+header nav a.signin:hover,
+.btn:hover {
+  background: #f40612;
+}
+
+#features nav {
+  padding-top: 35px;
+  background-color: #141414;
+  border-bottom: 2px solid #3d3d3d;
+}
+
+#features > nav a {
+  text-decoration: none;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+  color: #777;
+  height: 125px;
+  line-height: 20px;
+}
+
+#features > nav a:hover {
+  color: #fff;
+}
+
+#features > nav a img {
+  height: 49px;
+}
+
+#features > nav a h2 {
+  margin: 10px 0 0;
+  font-size: 1em;
+}
+
+.columns {
+  display: flex;
+}
+
+.columns.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.column.is-25 {
+  flex: none;
+  width: 25%;
+}
+
+.column.is-narrow {
+  flex: none;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.size-90 {
+  width: 90%;
+}
+
+.size-80 {
+  width: 80%;
+}
+
+.size-70 {
+  width: 70%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#features > nav a.is-selected {
+  border-bottom: 5px solid #e50914;
+  color: #fff;
+}
+
+#features > article {
+  margin-bottom: 120px;
+}
+
+#features > article > section {
+  display: none;
+  padding: 40px 0;
+}
+
+#features > article > section.is-selected {
+  display: block;
+}
+
+#features > article h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 60px 0 20px;
+}
+
+#features img {
+  max-width: 100%;
+}
+
+#features #watchanywhere h2 {
+  font-size: 19px;
+  padding-right: 1em;
+  margin: 0 0 20px;
+}
+
+#features #watchanywhere > div:first-child {
+  margin-bottom: 60px;
+}
+
+#features #watchanywhere p {
+  color: #999;
+}
+
+#features #pickprice h2 {
+  font-size: 22px;
+  display: inline;
+  margin: 0 40px 0 0;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+table,
+thead,
+tbody {
+  border-collapse: collapse;
+}
+
+thead {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+thead th {
+  padding: 10px;
+}
+
+tbody {
+  color: #999;
+}
+
+tbody td {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+tbody tr:nth-child(2n) {
+  background-color: #222;
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+
+footer {
+  padding-top: 20px;
+  color: #999;
+  max-width: 1000px;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer > p {
+  margin: 0 0 30px;
+}
+
+footer > ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer > ul > li {
+  list-style: none;
+  margin: 0 0 16px;
+  padding-right: 12px;
+  min-width: 100px;
+  font-size: 13px;
+}
