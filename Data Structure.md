@@ -87,3 +87,90 @@
 ---
 
 </details>
+<details><summary>딕셔너리(Dictionary)</summary>
+
+## 딕셔너리란?
+
+데이터를 [키, 값] 쌍으로 담아두는 자료구조로 키는 값을 찾기 위한 식별자이다. 딕셔너리는 맵(Map)이라고도 불린다.
+
+<div align="center">
+	<img src="https://t1.daumcdn.net/cfile/tistory/99AB52405C41674237" align="middle"></img> 
+    <br>
+    <sub>딕셔너리(Dictionary)</sub>  
+    <br><br>
+</div>
+
+## 딕셔너리 구현하기
+
+### JavaScript
+
+```javascript
+function Dictionary() {
+  var dictionary = {};
+
+  // 키에 해당하는 값이 딕셔너리에 존재하면 true, 존재하지 않으면 false를 반환
+  this.has = function(key) {
+    return key in dictionary;
+  };
+
+  // 딕셔너리에 새로운 값을 추가
+  this.set = function(key, value) {
+    dictionary[key] = value;
+  };
+
+  // 딕셔너리에서 키에 해당하는 값을 제거
+  this.remove = function(key) {
+    if (this.has(key)) {
+      delete dictionary[key];
+      return true;
+    }
+    return false;
+  };
+
+  // 키에 해당하는 값을 반환
+  this.get = function(key) {
+    return this.has(key) ? dictionary[key] : undefined;
+  };
+
+  // 딕셔너리의 모든 값을 배열로 반환
+  this.values = function() {
+    var values = [];
+
+    for (var key in dictionary) {
+      if (this.has(key)) {
+        values.push(dictionary[key]);
+      }
+    }
+    return values;
+  };
+
+  // 모든 키-값을 삭제
+  this.clear = function() {
+    dictionary = {};
+  };
+
+  // 딕셔너리의 키-값 쌍의 개수 반환
+  this.size = function() {
+    return Object.keys(items).length;
+  };
+
+  // 딕셔너리의 모든 키를 배열로 반환
+  this.keys = function() {
+    var keys = [];
+
+    for (var key in dictionary) {
+      if (this.has(key)) {
+        keys.push(key);
+      }
+    }
+    return keys;
+  };
+
+  // 딕셔너리를 반환
+  this.getDictionary = function() {
+    return dictionary;
+  };
+}
+```
+
+</details>
