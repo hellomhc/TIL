@@ -180,6 +180,10 @@ function bubbleSort(arr) {
 - AVERAGE: O(n^2)
 - WORST : O(n^2)
 
+##### SPACE COMPLEXITY
+
+- O(1)
+
 ##### TIPS
 
 - Bubble sort is a good candidate when we know that the data is very nearly sorted.
@@ -255,5 +259,71 @@ function selectionSort(arr) {
 
 ##### TIME COMPLEXITY
 
-BEST - O(n)
-WORST - O(n^2)
+- BEST - O(n)
+- AVERAGE - O(n^2)
+- WORST - O(n^2)
+
+##### SPACE COMPLEXITY
+
+- O(1)
+
+### INSERTION SORT
+
+Builds up the sort by gradually creating a larger left half which is always sorted.
+
+##### PSEUDOCODE
+
+- Start by picking the second element in the array.
+- Now compare the second element with the one before it and swap if necessary.
+- Continue to the next element and if it is in the incorrect order, iterate through the sorted portion(i.e. the left side) to place the element in the correct place.
+- Repeat until the array is sorted.
+
+##### MY APPROACH
+
+```javascript
+function insertionSort(arr) {
+  for (var i = 1; i < arr.length; i++) {
+    for (var j = i - 1; j >= 0; j--) {
+      if (arr[j] <= arr[j + 1]) break;
+      var temp = arr[j + 1];
+      arr[j + 1] = arr[j];
+      arr[j] = temp;
+    }
+  }
+  return arr;
+}
+```
+
+##### SOLUTION
+
+```javascript
+function insertionSort(arr) {
+  for (var i = 1; i < arr.length; i++) {
+    var currentVal = arr[i];
+    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = currentVal;
+  }
+  return arr;
+}
+
+insertionSort([2, 1, 9, 76, 4]);
+```
+
+##### TIME COMPLEXITY
+
+- BEST: O(n)
+- AVERAGE: O(n^2)
+- WORST : O(n^2)
+
+##### SPACE COMPLEXITY
+
+- O(1)
+
+### RECAP
+
+- Sorting is fundamental!
+- Bubble sort, selection sort, and insertion sort are all roughly equivalent.
+- All have average time complexities that are quadratic.
+- We can do better... but we need more complex algorithms!
