@@ -236,6 +236,20 @@
 
 </details>
 
+## Google Cloud Platform
+
+<details><summary>IoT Core에 대해 설명하시오.</summary>
+
+> 분산된 IoT 기기, 센서 같은 기기들을 서로 연결하고 관리해주는 서비스이다. 동시에 Google Cloud Platform 내의 다양한 서비스 이용을 위한 매개체 역할을 하는 일종의 게이트웨이 역할을 수행하기도 한다. IoT 기기의 데이터는 HTTPS 또는 MQTTS 프로토콜을 통해 IoT Core로 전송되어 IoT Core 내부의 데이터 브로커를 거쳐 대용량 메시지 배포 서비스인 Google Cloud Pub/Sub에 임시 보관된다. 보관된 데이터는 Google Cloud Platform 내 머신러닝, 데이터 시각화, 빅데이터 등 다양한 영역에 활용될 수 있다.
+
+</details>
+
+<details><summary>Cloud Pub/Sub에 대해 설명하시오.</summary>
+
+> Cloud Pub/Sub는 데이터를 일시적으로 저장하여 애플리케이션들이 독립적으로 커뮤니케이션할 수 있도록 돕는 메시지 큐이다. 내부적으로 구독/발행 메커니즘을 사용한다.
+
+</details>
+
 ## Design Pattern
 
 <details><summary>MVC에 대해 설명하시오.</summary>
@@ -279,5 +293,11 @@
 <details><summary>CVCS와 DVCS의 차이를 설명하시오.</summary>
 
 > CVCS(중앙 집중식 버전 관리)는 파일을 관리하는 서버가 별도로 있고 클라이언트가 중앙 서버에서 파일을 받아서 사용한다. 그러나 중앙 서버에 문제가 발생하면 다른 사람과의 협업이 불가능하고 백업할 방법이 없다. 또한 중앙 데이터베이스에 하드디스크에 문제가 생기면 프로젝트의 모든 히스토리를 잃게 된다. 이와 달리 DVCS(분산 버전 관리 관리)는 파일을 단순히 받는 차원이 아니라 분산된 개개의 클라이언트가 프로젝트의 히스토리를 모두 복제하여 가지고 있다. 이는 서버에 문제가 발생하여도 다른 클라이언트가 가지고 있는 프로젝트 복제본을 사용하면 되기 때문에 프로젝트를 좀 더 효율적으로 관리할 수 있다.
+
+</details>
+
+<details><summary>SI, SM의 차이를 설명하시오.</summary>
+
+> SI란 System Integration의 약자로 시스템 구축을 의미한다. SI 개발자는 기획, 개발, 설치, 운영, 보수 등 모든 과정에 참여하여 고객이 필요로 하는 시스템을 구축한다. 이와 달리, SM은 System management 약자로 시스템 관리를 의미하는데 SM 개발자는 기존에 만들어진 시스템을 관리하며 필요에 따라 추가 개발을 하기도 한다.
 
 </details>
