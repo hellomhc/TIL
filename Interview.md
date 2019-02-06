@@ -56,41 +56,230 @@
 
 ## HTML
 
-<details><summary>doctype을 선언하는 이유에 대해 설명하시오.</summary>
+<details><summary>doctype이란?</summary>
 
-> doctype은 웹 브라우저가 HTML 문서를 읽어낼 때 그 문서가 어떤 문서 형식을 따르고 있는지 명시적으로 웹브라우저에 알리는 방법이다. 웹 브라우저는 문서 내의 doctype 선언이 존재하는지, 선언되었다면 어떤 버전이 선언되었는지에 따라 레이아웃 엔진의 렌더링 방식을 결정한다. 여기에는 quirks mode, almost standards mode, standards mode 3가지 방식이 있는데 quirks mode는 IE5 이하 버전처럼 오래된 레거시 웹페이지들의 하위 호환성을 유지하기 위한 목적으로 옛 버전 기준에 따라 문서를 렌더링하고 almost standards mode는 일부를 제외하고 HTML5 표준에 따라 문서를 렌더링한다. 그리고 마지막으로 standards mode는 HTML5 표준을 엄격히 따라 문서를 렌더링한다.
+---
+
+### doctype이란?
+
+웹 브라우저가 HTML 문서를 읽어낼 때 그 문서가 어떤 문서 형식을 따르고 있는지 명시적으로 웹브라우저에 알리는 방법이다. 웹 브라우저는 문서 내의 doctype 선언이 존재하는지, 선언되었다면 어떤 버전이 선언되었는지에 따라 <b>레이아웃 엔진의 렌더링 방식</b>을 결정한다. 
+
+### 렌더링 방식을 결정하는 3가지 모드
+
+- quirks mode: IE5 이하 버전처럼 오래된 레거시 웹페이지들의 하위 호환성을 유지하기 위한 목적으로 옛 버전 기준에 따라 문서를 렌더링한다.
+- almost standards mode: HTML5 표준에 따라 문서를 렌더링한다. 그러나 HTML5의 모든 표준을 지키는 것은 아니다.
+- standards mode: HTML5 표준을 엄격히 따라 문서를 렌더링한다.
+
+---
 
 </details>
 
-<details><summary>script 태그의 위치가 중요한 이유에 대해 설명하시오.</summary>
+<details><summary>script 태그의 위치가 중요한 이유는?</summary>
 
-> script 태그 위치에 따라 렌더링 경로 최적화에 영향을 미치기 때문이다. 브라우저의 일부인 HTML 파서는 script 태그를 만나면 DOM 생성 프로세스를 중지하고 자바스크립트 엔진에 제어 권한을 넘긴다. 자바스크립트 엔진이 스크립트의 코드를 실행 완료하면 브라우저는 중지했던 시점부터 DOM 생성을 재개한다. 이러한 이유로 script 태그를 먼저 실행하게 되면 초기 렌더링도 지연되기 때문에 script 태그를 body 태그가 끝나는 지점에 두는 것이 좋다.
+---
+
+### script 태그의 위치가 중요한 이유는?
+
+ script 태그 위치는 <b>렌더링 경로 최적화</b>에 영향을 미친다. 브라우저의 일부인 HTML 파서는 script 태그를 만나면 DOM 생성 프로세스를 중지하고 자바스크립트 엔진에 제어 권한을 넘긴다. 자바스크립트 엔진이 스크립트의 코드를 실행 완료하면 브라우저는 중지했던 시점부터 DOM 생성을 재개한다. 이러한 이유로 script 태그를 먼저 실행하게 되면 <b>초기 렌더링도 지연</b>되기 때문에 script 태그를 body 태그가 끝나는 지점에 두는 것이 좋다.
+
+### 참고 문서
+
+[Adding Interactivity with JavaScript - Google Developers](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)
+
+---
 
 </details>
 
 ## CSS
 
-<details><summary>id와 class를 어느 쪽을 선호하는지, 그리고 왜 그런지 이유를 설명하시오.</summary>
+<details><summary>id와 class의 차이는?</summary>
 
-> class를 선호하는 편이다. 왜냐하면 먼저 코드를 작성하다 보면 나중에 재사용할 가능성도 있고 또한 id와 class를 같이 사용할 경우 캐스케이딩이 복잡해질 수도 있다. 그리고 마지막으로 id를 사용하면 자바스크립트에서 글로벌 변수가 생성되기 때문에 네임스페이스가 더러워지고 디버깅이 어려워지기 때문에 id보다는 class를 선호한다.
+---
+
+### id 와 class의 차이는?
+
+- id: 문서 내에서 <b>한 개의 고유한 요소</b>를 선택하여 스타일을 지정할 때 사용한다.
+- class: 문서 내에서 <b>여러 개의 요소</b>를 선택하여 스타일을 지정할 때 사용한다.
+
+### id와 class의 선호도
+
+class👍 class👍 class👍 도대체 왜!??
+
+- 코드의 재사용 가능성이 언제나 존재한다.
+- id와 class를 동시에 사용할 경우 케스케이딩이 복잡해질 가능성이 있다.
+- id를 사용하면 자바스크립트에서 글로벌 변수가 생성되어 네임 스페이스가 오염되고 디버깅이 어려워진다.
+
+---
 
 </details>
 
-<details><summary>transition에 대해 설명하시오.</summary>
+<details><summary>트랜지션(transition)이란?</summary>
 
-> CSS3 스펙의 일부로 CSS의 프로퍼티 값이 바뀌었을 때 원래 값에서 바뀐 값으로의 전환을 부드럽게 표현하는 기능이다.
+---
+
+### 트랜지션이란?
+
+CSS의 프로퍼티 값이 바뀌었을 때 원래 값에서 바뀐 값으로의 <b>전환을 부드럽게</b> 표현하는 기능으로 CSS3 스펙의 일부이다.
+
+### 트랜지션의 종류
+
+- transition-property: all; - 트랜지션이 해당 엘리먼트의 모든 프로퍼티에 적용한다.
+- transition-duration: 1s; - 트랜지션이 1초 동안에 걸쳐서 발생한다.
+- transition: all 1s; - 트랜지션이 해당 엘리먼트의 모든 프로퍼티에 적용되며 1초 동안에 걸쳐서 발생한다.
+- transition: font-size 1s, transform 0.1s; - 트랜지션이 각각 폰트 사이즈는 1초, 트랜스폼은 0.1초에 걸쳐서 발생한다.
+- transition-delay: 1s; - 트랜지션 발생 시기를 1초 지연한다.
+- transition-timing-function: linear - 트랜지션이 일정 속도로 적용한다.
+- transition-timing-function: ease - 트랜지션이 느리게 시작하여 점점 빨라지다가 다시 느려진다.(현실 세계와 비슷)
+
+### 예시
+
+```html
+<div id="box"></div>
+```
+
+```css
+#box {
+    width: 50px;
+    height: 50px;
+    transition: all 5s;
+}
+
+/* hover 시 box 아이디를 가진 요소의 크기가 10px에서 100px로 5초 동안 변하는 과정을 부드럽게 표현함*/
+#box:hover {
+    width: 100px;
+    height: 100px;
+}
+
+```
+
+### 참고 문서
+[Using CSS transitions - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+
+---
 
 </details>
 
-<details><summary>Vendor Prefix에 대해 설명하시오.</summary>
+<details><summary>밴더 프리픽스(vendor prefix)란?</summary>
 
-> CSS3 스펙의 일부로 CSS의 프로퍼티 값이 바뀌었을 때 원래 값에서 바뀐 값으로의 전환을 부드럽게 표현하는 기능이다.
+---
+
+### 밴더 프리픽스란?
+
+밴더 프리픽스란 웹 브라우저의 <b>실험적인 기능 또는 표준이 아닌 기능</b>을 사용하기 위해 필요한 접두사이다. 밴더 프리픽스는 브라우저 엔진마다 각기 다른 이름으로 제공되고 있다. 실험  기능 또는 비표준 기능이 표준화되어 브라우저에 반영되면 밴더 프리픽스없이 기능을 사용할 수 있지만 그 이전에 구현된 브라우저는 반드시 밴더 프리픽스를 사용해야 해당 기능을 사용할 수 있다. 
+
+### 주요 브라우저별 CSS Prefix
+
+ |   크롬   | 익스플로러 | 파이어폭스 |   사파리  | 오페라 |
+ |:--------:|:---------:|:---------:|:--------:|:-----:|
+ | -webkit- |    -ms-   |   -moz-   | -webkit- |  -o-  |
+
+### 참고 문서
+
+[Vendor Prefix - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)
+
+---
 
 </details>
 
-<details><summary>clear 속성에 대해 설명하시오.</summary>
+<details><summary>clear 속성이란?</summary>
 
-> 특정 엘리먼트의 좌우에 float된 요소가 위치하지 않도록 제한하는 css 속성이다. 주로 부모 컨테이너가 자식 요소들의 높이를 반영하지 못할 때 div 태그에 clear:both를 사용하여 부모 컨테이너가 이를 반영하도록 할 때 사용한다.
+---
+
+### clear 속성이란?
+
+특정 엘리먼트의 좌우에 <b>float된 요소가 위치하지 않도록</b> 제한하는 css 속성이다. 주로 자식 요소의 float 속성때문에 부모 컨테이너가 자식 요소들의 높이를 반영하지 못하는 문제를 해결하기 위해 사용한다.
+
+### 예시
+
+#### clear 속성 적용 전
+
+<div align="center">
+	<img src="https://t1.daumcdn.net/cfile/tistory/999A46395C5A806B35" align="middle"></img> 
+    <br><br>
+</div>
+
+```html
+<div class="card">
+  <img class="card-img" src="someImg.png" alt="someImg">
+  <h2>Hello, World! </h2>
+  <p>Learning never exhausts the mind.</p>
+</div> 
+
+```
+
+```css
+.card {
+  border: 1px solid #0984e3;
+  width: 500px;
+}
+
+.card:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  float: left;
+}
+```
+
+#### clear 속성 적용 후
+
+<div align="center">
+	<img src="https://t1.daumcdn.net/cfile/tistory/9989DB395C5A806C34" align="middle"></img> 
+    <br><br>
+</div>
+
+```html
+<div class="card">
+  <img class="card-img" src="someImg.png" alt="someImg">
+  <h2>Hello, World! </h2>
+  <p>Learning never exhausts the mind.</p>
+</div> 
+
+```
+
+```css
+.card {
+  border: 1px solid #0984e3;
+  width: 500px;
+}
+
+.card:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  float: left;
+}
+```
+
+---
+
+</details>
+
+<details><summary>normalize.css와 reset.css란?</summary>
+
+---
+
+### normalize.css와 reset.css란?
+크롬, 익스플로러, 파이어폭스 등 브라우저는 저마다 고유의 css 기본 속성값을 가지고 있다. 그 결과 같은 css 코드임에도 브라우저별로 또는 버전별로 다르게 보일 때가 있다. 이러한 크로스 브라우징 이슈에 대응하기 위해 css를 초기화하는 테크닉이 등장하였는데 normalize.css와 reset.css가 그에 해당한다.
+
+### normalize.css와 reset.css의 차이는?
+
+- [reset.css](https://meyerweb.com/eric/tools/css/reset/reset.css): 모든 스타일링 속성을 제거하여 브라우저의 기본 스타일을 통일한다.
+- [normalize.css](https://necolas.github.io/normalize.css/8.0.1/normalize.css): 유용한 기본 스타일링 속성들을 활용하는 방향으로 초기화하여 브라우저의 기본 스타일을 통일한다.
+
+---
 
 </details>
 
@@ -224,15 +413,86 @@
 
 ## Java
 
-<details><summary>클래스(Class), 객체(Object), 인스턴스(Instance)의 차이를 설명하시오.</summary>
+<details><summary>자바의 특징은?</summary>
 
-> 먼저 객체는 현실 세계의 실체를 소프트웨어에서 다루기 위해 이들을 추상화하고 상태와 행위를 가진 독립적인 단위로 나타낸 것이고 다음으로 클래스는 객체가 가진 상태와 행위를 정의하여 객체를 생성하기 위한 하나의 틀로 자바에서는 class라는 키워드를 사용한다. 마지막으로 인스턴트는 클래스를 통해 생성되어 메모리에 할당된 객체를 부르는 표현이다.
+---
+
+### 자바의 특징은?
+
+1. <b>객체 지향 언어</b>로 객체 지향의 특성인 클래스, 상속, 캡슐화, 다형성 등을 제공한다.
+2. <b>운영체제에 독립적</b>으로 JVM(Java Virtual Machine)이 설치된 컴퓨터라면 어디에서든 실행할 수 있다.(Write once, run anywhere)
+3. <b>무료 개발 환경</b>을 제공한다.
+4. 그래픽, 네트웤, 파일 입출력, 스레드, 데이터베이스, 원격 호출 등 <b>다양한 분야의 라이브러리</b>를 제공한다.
+
+---
 
 </details>
 
-<details><summary>오버라이딩(Overriding)와 오버로딩(Overloading)의 차이를 설명하시오.</summary>
 
-> 오버라이딩은 상속 관계에 있는 부모 클래스에서 이미 정의된 메소드를 자식 클래스에서 같은 매개변수의 리스트 갖는 메소드로 재정의하는 것을 의미하지만 오버로딩은 한 클래스 내에서 이름은 같지만 서로 다른 매개 변수 항목을 가진 메소드 또는 생성자를 중복하여 정의하는 것을 의미한다.
+<details><summary>객체 지향이란(Object-oriented)?</summary>
+
+---
+
+### 객체 지향이란?
+
+실세계의 모든 사물들을 속성과 기능을 지닌 객체로 정의하고, 사물들 간의 상호 작용을 정의하여 실제 세계를 흉내내는 이론을 의미한다. 컴퓨터를 통하여 실세계와 같은 환경을 흉내내기 위해 등장하였다. 이러한 이론을 적용한 프로그래밍을 객체 지향 프로그래밍, 언어를 객체 지향 언어라고 한다. 
+
+---
+
+</details>
+
+<details><summary>객체 지향의 장점은?</summary>
+
+---
+
+### 객체 지향의 장점은?
+
+- 쉬운 모델링: 해결하고자 하는 문제의 요소들을 자연스럽게 프로그램화(모델링)할 수 있다. 이를 위해 클래스, 캡슐화, 상속, 다형성 등의 여러 기능을 제공한다. 
+- 높은 생산성: 독립적인 단위인 객체를 만들어 서로 연결하여 프로그램을 완성하는 방식으로 데이터에 의존적인 절차 지향 방법에 비해 생산성이 높다.
+- 재사용성: 객체 지향의 객체는 완전한 독립성을 보장하는 모듈이기 때문에 다양한 프로그램에서 재사용할 수 있다.
+
+---
+
+</details>
+
+<details><summary>클래스(Class)와 객체(Object) 그리고 인스턴스(Instance)의 차이는?</summary>
+
+---
+
+### 클래스와 객체 그리고 인스턴스의 차이는?
+
+- 클래스: 객체를 만들기 위한 하나의 틀로 생성하기 위한 객체를 정의한다. 자바에서는 class라는 키워드를 사용해서 클래스를 구현한다.
+- 객체: 현실 세계의 실체를 추상화한 상태와 행위를 가진 독립적인 단위를 의미한다.(개인적인 생각으로 현실 세계의 실체를 컴퓨터에서 다루기 위한 하나의 자료형에 불과하다.)
+- 인스턴스: 클래스를 통해 생성되어 실제로 메모리에 할당되어 있는 객체를 의미한다.
+
+---
+
+</details>
+
+<details><summary>오버라이딩(Overriding)와 오버로딩(Overloading)의 차이는?</summary>
+
+### 오버라이딩과 오버로딩의 차이는?
+
+---
+
+- 오버라이딩: 상속 관계에 있는 부모 클래스에서 이미 정의된 메소드를 자식 클래스에서 같은 매개변수의 리스트 갖는 메소드로 재정의하는 것을 의미한다.
+- 오버로딩: 한 클래스 내에서 이름은 같지만 서로 다른 매개 변수 항목을 가진 메소드 또는 생성자를 중복하여 정의하는 것을 의미한다.
+
+---
+
+</details>
+
+<details><summary>Java SE와 Java EE 그리고 Java ME의 차이는?</summary>
+
+---
+
+### Java SE와 Java EE 그리고 Java ME의 차이는?
+
+- Java SE(Standard Edition): 표준 자바 플랫폼으로 클라이언트 중심의 <b>일반적인 자바 응용 프로그램</b> 개발을 위한 플랫폼이다.
+- Java EE(Enterprise Edition): 기존 Java SE에 <b>서버 중심의 기능</b>을 추가한 기업용 소프트웨어 개발 플랫폼이다.
+- Java ME(Mobile Edition): PDA나 스마트폰 등 <b>소형 기기</b>를 위한 개발 플랫폼이다.
+
+---
 
 </details>
 
@@ -296,8 +556,15 @@
 
 </details>
 
-<details><summary>SI, SM의 차이를 설명하시오.</summary>
+<details><summary>SI와 SM의 차이는?</summary>
 
-> SI란 System Integration의 약자로 시스템 구축을 의미한다. SI 개발자는 기획, 개발, 설치, 운영, 보수 등 모든 과정에 참여하여 고객이 필요로 하는 시스템을 구축한다. 이와 달리, SM은 System management 약자로 시스템 관리를 의미하는데 SM 개발자는 기존에 만들어진 시스템을 관리하며 필요에 따라 추가 개발을 하기도 한다.
+---
+
+### SI와 SM의 차이는?
+
+- SI: System Integration의 약자로 <b>시스템 구축</b>을 의미한다. SI 개발자는 기획, 개발, 설치, 운영, 보수 등 모든 과정에 참여하여 고객이 필요로 하는 시스템을 구축한다.
+- SM: System management의 약자로 <b>시스템 관리</b>를 의미한다. SM 개발자는 기존에 만들어진 시스템을 관리하며 필요에 따라 추가 개발을 하기도 한다.
+
+---
 
 </details>
