@@ -891,6 +891,68 @@ Cloud Pub/Sub는 데이터를 일시적으로 저장하여 애플리케이션들
 
 </details>
 
+
+<details><summary>싱글턴(Singleton)이란?</summary>
+
+---
+### 싱글턴이란?
+
+클래스의 인스턴스 생성을 하나로 제한하기 위한 패턴이다. 클래스의 인스턴스가 존재하지 않을 경우에는 새로운 인스턴스를 생성해 반환하고, 만약 존재한다면 이미 생성된 인스턴스에 대한 참조 주소를 반환한다.
+
+### 예시
+
+```javascript
+var mySingleton = (function () {
+  // 싱글턴의 참조 주소를 담는다.
+  var instance;
+ 
+  function init() {
+    // Private 프로퍼티와 메서드
+    var name = "Singleton";
+
+    function reverseName(){
+      return name.split("").reverse().join("");
+    }
+ 
+    // Public 프로퍼티와 메서드
+    return {
+      nickname: "No nickname yet",
+      getName: function () {
+        return name;
+      },
+      getReversedName: function() {
+        return reverseName();
+      }
+    };
+  };
+ 
+  return {
+    // 이미 인스턴스가 존재하면 해당 인스턴스를 반환하고 없으면 새로운 인스턴스 생성해 반환
+    getInstance: function () {
+      if ( !instance ) {
+        instance = init();
+      }
+      return instance;
+    }
+  };
+})();
+ 
+var singleA = mySingleton.getInstance();
+var singleB = mySingleton.getInstance();
+
+// 싱글턴으로 같은 인스턴스를 가리킨다.
+console.log( singleA.getName() === singleB.getName() ); // true
+ 
+```
+
+### 참고 문서
+[Learning JavaScript Design Patterns - Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+
+---
+
+</details>
+
+
 ## ETC.
 
 <details><summary>트리 쉐이킹(Tree shaking)이란?</summary>
