@@ -712,11 +712,11 @@ arguments 객체는 함수에 전달된 인수를 가진 Array 형태의 객체�
 
 </details>
 
-<details><summary>호스트 객체(Host Object)와 네이티브 객체(Native Object)란?</summary>
+<details><summary>호스트 객체(Host Object)와 네이티브 객체(Native Object)의 차이는?</summary>
 
 ---
 
-### 호스트 객체와 네이티브 객체란?
+### 호스트 객체와 네이티브 객체의 차이는?
 
 네이티브 객체는 ECMAScript 명세에 정의된 객체로 애플리케이션 전역에 공통된 기능을 제공한다. 애플리케이션의 환경과 관계없이 언제나 사용할 수 있으며 Object, String, Number, Function, Array, RegExp, Date, Math와 같은 객체 생성에 관계가 있는 함수 객체와 메소드로 구성된다. 이와 달리 호스트 객체(Host object)는 브라우저 환경에서 제공하는 window, XmlHttpRequest, HTMLElement 등의 DOM 노드 객체와 같이 호스트 환경에 정의된 객체를 말한다. 호스트 객체는 동작하는 환경에 따라 다른데 브라우저 외부에서 동작하는 Node.js같은 경우 다른 호스트 객체를 사용한다.
 
@@ -790,7 +790,7 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 ### 객체 지향이란?
 
-실세계의 모든 사물들을 속성과 기능을 지닌 객체로 정의하고, 사물들 간의 상호 작용을 정의하여 실제 세계를 흉내내는 이론을 의미한다. 컴퓨터를 통하여 실세계와 같은 환경을 흉내내기 위해 등장하였다. 이러한 이론을 적용한 프로그래밍을 객체 지향 프로그래밍, 언어를 객체 지향 언어라고 한다. 
+실세계의 모든 사물들을 속성과 기능을 지닌 객체로 정의하고, 사물들 간의 상호 작용을 정의하여 실제 세계를 흉내내는 이론을 의미한다. 컴퓨터를 통하여 실세계와 같은 환경을 흉내내기 위해 등장하였다. 이러한 이론을 적용한 프로그래밍을 객체 지향 프로그래밍, 언어를 객체 지향 언어라고 한다.
 
 ---
 
@@ -810,11 +810,11 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 </details>
 
-<details><summary>클래스(Class)와 객체(Object) 그리고 인스턴스(Instance)의 차이는?</summary>
+<details><summary>클래스(Class), 객체(Object), 인스턴스(Instance)의 차이는?</summary>
 
 ---
 
-### 클래스와 객체 그리고 인스턴스의 차이는?
+### 클래스, 객체, 인스턴스의 차이는?
 
 - 클래스: 객체를 만들기 위한 하나의 틀로 생성하기 위한 객체를 정의한다. 자바에서는 class라는 키워드를 사용해서 클래스를 구현한다.
 - 객체: 현실 세계의 실체를 추상화한 상태와 행위를 가진 독립적인 단위를 의미한다.(개인적인 생각으로 현실 세계의 실체를 컴퓨터에서 다루기 위한 하나의 자료형에 불과하다.)
@@ -837,15 +837,52 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 </details>
 
-<details><summary>Java SE와 Java EE 그리고 Java ME의 차이는?</summary>
+<details><summary>Java SE, Java EE, Java ME의 차이는?</summary>
 
 ---
 
-### Java SE와 Java EE 그리고 Java ME의 차이는?
+### Java SE, Java EE, Java ME의 차이는?
 
 - Java SE(Standard Edition): 표준 자바 플랫폼으로 클라이언트 중심의 <b>일반적인 자바 응용 프로그램</b> 개발을 위한 플랫폼이다.
 - Java EE(Enterprise Edition): 기존 Java SE에 <b>서버 중심의 기능</b>을 추가한 기업용 소프트웨어 개발 플랫폼이다.
 - Java ME(Mobile Edition): PDA나 스마트폰 등 <b>소형 기기</b>를 위한 개발 플랫폼이다.
+
+---
+
+</details>
+
+<details><summary>JVM, JRE, JDK의 차이는?</summary>
+
+### JVM, JRE, JDK의 차이는?
+
+<div align="center">
+  <br>
+	<img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/JDK_JRE_JVM_x.jpg" width="300" align="middle"></img> 
+  <br>
+</div>
+
+
+##### JVM(Java Virtual Machine):
+
+자바 코드(.java)를 컴파일하여 생성된 바이트 코드(.class)를 실행하는 자바 가상 머신이다. 바이트 코드를 각 운영체제에 적합한 기계어로 변환하는 소프트웨어라고 볼 수 있다. 클래스 로더(Class Loader)가 컴파일된 자바 바이트코드를 운영체제로부터 할당받은 메모리 영역인 런타임 데이터 영역(Runtime Data Areas)에 로드하고 실행 엔진(Execution Engine)이 로드된 바이트 코드를 실행한다. 내부적으로 인터프리터 방식을 사용하지만 매번 한 줄씩 명령어를 해석하고 실행하는 것은 컴파일된 기계어를 실행하는 것보다 느리기 때문에 자주 사용되는 프로그램 중 일부는 실행 과정에서 컴파일하는 JIT 컴파일 방식을 함께 사용하기도 한다. 가비지 컬렉션을 통한 메모리 관리 또한 JVM이 수행한다. OS마다 구성이 다르기 때문에 JVM(JRE, JDK도 마찬가지) 자체는 플랫폼에 의존적이지만 자바 컴파일러를 통해 생성된 바이트코드는 플랫폼에 [독립적](https://stackoverflow.com/questions/17101796/platform-independence-in-javas-byte-code)이다.
+
+<div align="center">
+	<img src="https://d2.naver.com/content/images/2015/06/helloworld-1230-1.png"  width="250" align="middle"></img> 
+    <br>
+    <sub><a href="https://d2.naver.com/helloworld/1230">JVM 구조</a></sub>  
+    <br>
+</div>
+
+##### JRE(Java Runtime Environment)
+자바 프로그램을 실행하기 위한 자바 실행 환경이다. JVM과 자바 프로그램 실행에 필요한 라이브러리 등을 제공한다. 컴파일, 디버깅 등에 필요한 개발 도구를 지원하지 않기 때문에 자바 프로그램을 단순히 실행하는 것이 아니라 자바 프로그램을 개발해야 한다면 JDK를 사용하여야 한다.
+
+##### JDK(Java Development Kit)
+자바 개발에 필요한 것들을 제공하는 개발 도구이다. JRE뿐만 아니라 자바 코드를 바이트 코드로 컴파일해주는 javac, 클래스 파일을 해석하고 실행하는 java, 디버깅 도구 등 [여러 가지 개발 도구](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EA%B0%9C%EB%B0%9C_%ED%82%A4%ED%8A%B8)를 제공한다. 자바 코드를 컴파일하려면 JDK가 필요하다(더 정확히 말하면 JDK에서 제공하는 javac).
+
+### 참고 문서
+
+[Differences between JDK, JRE and JVM - GeeksforGeeks](https://www.geeksforgeeks.org/differences-jdk-jre-jvm/)  
+[JVM Internal - NAVER D2](https://d2.naver.com/helloworld/1230)
 
 ---
 
@@ -886,6 +923,16 @@ Cloud Pub/Sub는 데이터를 일시적으로 저장하여 애플리케이션들
 ### MVC란?
 
 애플리케이션을 사용자에게 보여지는 화면인 뷰와 실제 비즈니스 로직이 들어가는 부분인 모델 그리고 뷰와 모델을 연결시켜주는 컨트롤러 세가지의 역할로 구분한 개발 방법론이다. 프로젝트 규모가 커지더라도 뷰 부분과 모델 부분의 분업으로 효율적인 개발이 가능하며 비즈니스 로직이 분리되어 있어 컴포넌트화할 수 있으므로 공통되는 로직의 재사용이 가능하게 되어 생산성이 매우 높아지는 장점이 있다.
+
+<div align="center">
+	<img src="https://mdn.mozillademos.org/files/16042/model-view-controller-light-blue.png"  width="400"  align="middle"></img> 
+    <br>
+    <sub><a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture">Model-View-Controller, MVC</a></sub>  
+    <br><br>
+</div>
+
+### 참고 문서
+[MVC architecture - MDN](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture)
 
 ---
 
@@ -973,7 +1020,18 @@ console.log( singleA.getName() === singleB.getName() ); // true
 
 ### 라이브러리와 프레임워크의 차이는?
 
-둘의 큰 차이는 이미 만들어진 구조 안에서 코드를 작성하느냐, 아니면 내가 만든 구조에 필요한 기능만 가져와서 사용하느냐의 차이이다. 프레임워크를 사용할 경우 프레임워크가 제시하는 아키텍처를 벗어날 수 없기 때문에 선택의 자유가 제한된다. 그러나 라이브러리의 경우 자신의 코드에 원하는 기능들을 불러와 사용하면 되기 때문에 프레임워크에 비해 선택이 자유롭다.
+둘의 큰 차이는 이미 만들어진 구조 안에서 코드를 작성하느냐, 아니면 내가 만든 구조에 필요한 기능만 가져와서 사용하느냐의 차이이다. 프레임워크를 사용할 경우 프레임워크가 제시하는 아키텍처를 벗어날 수 없기 때문에 선택의 자유가 제한된다. 그러나 라이브러리의 경우 자신의 코드에 원하는 기능들을 불러와 사용하면 되기 때문에 프레임워크에 비해 선택이 자유롭다.(제어의 주체가 누가 되느냐가 결정적 차이)
+
+<div align="center">
+  <br>
+	<img src="https://i.stack.imgur.com/DqCkT.png"  width="400"  align="middle"></img> 
+    <br>
+    <sub><a href="https://stackoverflow.com/questions/148747/what-is-the-difference-between-a-framework-and-a-library">Library vs Framework</a></sub>  
+    <br><br>
+</div>
+
+### 참고 문서
+[What is the difference between a framework and a library? - Stackoverflow](https://stackoverflow.com/questions/148747/what-is-the-difference-between-a-framework-and-a-library)
 
 ---
 
