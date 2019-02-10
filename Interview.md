@@ -1098,3 +1098,34 @@ Babel은 자바스크립트 컴파일러이다. ECMAScript 6 이상의 최신 �
 ---
 
 </details>
+
+<details><summary>JSON(JavaScript Object Notation)이란?</summary>
+
+---
+
+### JSON이란?
+
+JSON은 <b>키-값 쌍으로 이루어진 데이터 교환 포맷</b>으로 사람이 읽고 쓰기가 쉽도록 텍스트를 사용하며 언어로부터 독립적이다.
+
+### JavaScript에서의 JSON 예시
+
+```javascript
+
+// JSON 문자열로 변환하기
+var obj = {name: "foo", age: 10}
+var json = JSON.stringfy(obj);
+
+console.log(json); // {"name":"foo","age":10}
+console.log(typeof json); // string
+
+// JSON 문자열 파싱하기
+var json = '{"name":"foo", "age":10}';
+var obj = JSON.parse(json);
+
+console.log(obj.age); // 10
+console.log(typeof obj); // object
+```
+
+---
+
+</details>
