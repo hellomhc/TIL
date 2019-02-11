@@ -824,6 +824,28 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 </details>
 
+<details><summary>private, default, protected, public의 차이는?</summary>
+
+---
+
+### private, default, protected, public의 차이는?
+
+- private: 해당 클래스 내에서만 접근 가능
+- default: 해당 패키지 내에서만 접근 가능
+- protected: 해당 패키지 내에서 또는 해당 클래스를 상속받은 외부 패키지의 클래스만 접근 가능 
+- public: 어떤 클래스에서도 접근 가능
+
+| 구분          | 클래스 내부 | 같은 패키지 | 상속받은 클래스 | 다른 패키지  |
+| ------------- |:----------:|:----------:|:--------------:|:-----------:|
+| private       | O          | X          | X              | X           |
+| default       | O          | O          | X              | X           |
+| protected     | O          | O          | O              | X           |
+| public        | O          | O          | O              | O           |
+
+---
+
+</details>
+
 <details><summary>오버라이딩(Overriding)와 오버로딩(Overloading)의 차이는?</summary>
 
 ### 오버라이딩과 오버로딩의 차이는?
@@ -888,6 +910,85 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 </details>
 
+<details><summary>==와 equals()의 차이는?</summary>
+
+---
+
+### ==와 equals()의 차이는?
+
+- ==: 비교되는 두 대상이 <b>동일한 객체</b>인지 비교한다.(객체의 주소값 비교)
+- equals(): 비교되는 두 대상이 <b>동일한 문자열</b>인지 비교한다.(문자열 값 자체 비교)
+
+##### new String과 String 리터럴의 차이
+ 
+- String 리터럴: String을 리터럴로 선언할 경우 String의 intern() 메서드가 내부적으로 호출되고 intern() 메서드는 주어진 문자열이 string constant pool 영역에 존재하는지 확인한다. 이미 존재한다면 캐시된 해당 주소값을 반환하고 존재하지 않다면 string constant pool에 넣고 새로운 주소값을 반환한다.
+- new String(): new를 통해 String을 생성하면 항상 새로운 객체를 만들며 이는 Heap 영역에 존재한다. 생성된 스트링의 intern() 메서드를 사용하면 위의 String 리터럴과 같은 방식으로 동작하여 주소값을 반환한다.
+
+##### 예시
+```java
+  String a = "hello";
+  String b = new String("hello");
+  String c = "hello"; // pool에 이미 존재
+  String d = b.intern(); // String 리터럴처럼 동작
+
+  System.out.println(a.equals(b)); // true
+  System.out.println(a==b); // false
+  System.out.println(a==c); //true
+  System.out.println(a.equals(c)); // true
+  System.out.println(a==d); // true
+```
+
+### 참고 문서
+[Java String 의 메모리에 대한 고찰 - Leopold Baik](https://medium.com/@joongwon/string-%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B3%A0%EC%B0%B0-57af94cbb6bc)
+
+
+---
+
+</details>
+
+<details><summary>String, StringBuffer, StringBuilder의 차이는?</summary>
+
+---
+
+### String, StringBuffer, StringBuilder의 차이는?
+
+
+- String: 불변적(immutable)이다. String이 한번 생성되면 변경이 불가능하다. 이러한 이유로 기존 String에 더하기(+) 연산으로 다른 String을 합칠 경우 새로운 String이 생성된다. trim, toUpperCase 등의 메소드도 마찬가지로 기존 String을 변경하는 것이 아니라 새로운 String을 생성하여 리턴한다. StringBuffer에 비해 메모리 사용량이 적고 속도가 빠르지만 String 연산이 많아질 때 계속해서 객체를 만드는 오버헤드가 발생하기 때문에 성능이 떨어진다. 이는 String 연산 작업이 거의 없는 경우에 적합하다. 
+- StringBuffer: 가변적(mutable)이고 멀티 스레드환경에서 동기화를 지원한다(thread-safe). 생성된 StringBuffer는 언제든지 변경할 수 있다. String 연산이 필요할 때마다 크기를 변경시켜 String을 변경한다. 그러나 String에 비해 메모리 사용량도 많고 속도가 느리다. String 변경 작업이 많을 경우에 적합하다. 
+- StringBuilder: 기본적으로 StringBuffer와 같지만 멀티 스레드 환경에서 동기화를 지원하지 않는다. 동기화를 고려하지 않으므로 싱글 스레드 환경에서 StringBuffer에 비해 가볍고 빠르다.
+
+<div align="center">
+	<img src="https://1.bp.blogspot.com/-kOcVTQZxiUU/WAI718RxDKI/AAAAAAAAHR4/k5iRdbSToGgAGp9UYBd4If8N8qosa0wRgCLcB/s400/String%2Bvs%2BStringBuffer%2Bin%2BJava%2B2.jpg"  width="400" align="middle"></img> 
+    <br>
+    <sub><a href="http://www.java67.com/2016/10/5-difference-between-stringbuffer.html">String vs StringBuffer</a></sub>  
+    <br>
+</div>
+
+##### 요약
+| -             | mutable/immutable  | Synchronization |
+| ------------- |:------------------:|:---------------:|
+| String        | immutable          |   -             |
+| StringBuffer  | mutable            |   O             |
+| StringBuilder | mutable            |   X             |
+
+##### 예시
+```java
+  String a = "hello";
+  String b = new String("hello");
+  String c = "hello"; // pool에 이미 존재
+  String d = b.intern(); // String 리터럴처럼 동작
+
+  System.out.println(a.equals(b)); // true
+  System.out.println(a==b); // false
+  System.out.println(a==c); //true
+  System.out.println(a.equals(c)); // true
+  System.out.println(a==d); // true
+```
+
+---
+
+</details>
+
 ## Google Cloud Platform
 
 <details><summary>IoT Core란?</summary>
@@ -946,10 +1047,10 @@ Cloud Pub/Sub는 데이터를 일시적으로 저장하여 애플리케이션들
 
 클래스의 인스턴스 생성을 하나로 제한하기 위한 패턴이다. 클래스의 인스턴스가 존재하지 않을 경우에는 새로운 인스턴스를 생성해 반환하고, 만약 존재한다면 이미 생성된 인스턴스에 대한 참조 주소를 반환한다.
 
-### 예시
+### 예시 - JavaScript
 
 ```javascript
-var mySingleton = (function () {
+var singleton = (function () {
   // 싱글턴의 참조 주소를 담는다.
   var instance;
  
@@ -984,12 +1085,37 @@ var mySingleton = (function () {
   };
 })();
  
-var singleA = mySingleton.getInstance();
-var singleB = mySingleton.getInstance();
+var singleA = singleton.getInstance();
+var singleB = singleton.getInstance();
 
 // 싱글턴으로 같은 인스턴스를 가리킨다.
 console.log( singleA.getName() === singleB.getName() ); // true
- 
+
+```
+
+### 예시 - Java
+
+```java
+class Singleton {
+  private static Singleton one;
+  private Singleton() {
+  }
+
+  public static Singleton getInstance() {
+    if(one==null) {
+      one = new Singleton();
+    }
+    return one;
+  }
+}
+
+public class SingletonTest {
+  public static void main(String[] args) {
+    Singleton singleton1 = Singleton.getInstance();
+    Singleton singleton2 = Singleton.getInstance();
+    System.out.println(singleton1 == singleton2); // true
+  }
+}
 ```
 
 ### 참고 문서
