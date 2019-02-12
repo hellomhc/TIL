@@ -989,6 +989,66 @@ Node.js는 구글 크롬의 V8 엔진을 기반으로 만들어진 자바스크�
 
 </details>
 
+<details><summary>자바빈(Java Bean)이란?</summary>
+
+---
+
+### 자바빈이란?
+
+자바빈 설계 규약에 따라 자바 코드로 작성된 컴포넌트이다. JSP 페이지의 디자인 영역과 비즈니스 로직 영역을 분리하기위해 사용된다.
+
+### 자바빈 설계 규약
+1. 멤버 변수마다 별도의 get/set 메서드가 존재해야 한다.
+2. get 메서드는 파라미터가 존재하지 않아야 한다.
+3. set 메서드는 반드시 하나 이상의 파라미터가 존재해야 한다.
+4. 빈즈 컴포넌트의 속성은 반드시 읽기 또는 쓰기가 가능해야 한다.(다시 말해, get 메서드와 set 메서드를 구현해야 함.) 읽기 전용인 경우 get 메서드만 정의 가능하다.
+5. 생성자는 파라미터가 존재하지 않아야 한다. 인자 없는 생성자가 반드시 있어야 한다.
+6. 멤버 변수의 접근 제어자는 private이고, 각 set/get 메서드와 클래스의 접근 제어자 public이어야 한다.
+
+### 예시
+
+##### BeanTest.java
+
+```java
+package test;
+
+public class BeanTest {
+  private String name = "Julia";
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+}
+
+```
+
+##### beanTest.jsp
+
+```jsp
+<%@ page language="java" contextType="text/html; charset=UTF-8"%>
+<!-- id는 빈의 이름으로 사용된다. -->
+<jsp:useBean id="beantest" class="test.BeanTest" scope="page"/>
+
+<html>
+...
+<body>
+  <!-- Julia -->
+  <h1><%=beantest.getName()%></h1>
+</body>
+</html>
+```
+
+### 참고 문서
+JSP 2.3 & Servlet 3.1 - 오정원
+
+---
+
+</details>
+
 ## Google Cloud Platform
 
 <details><summary>IoT Core란?</summary>
