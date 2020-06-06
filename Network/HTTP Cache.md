@@ -1,7 +1,3 @@
-# Network
-
-<details><summary>HTTP Cache</summary>
-
 ## HTTP 캐시
 
 ### 캐시란?
@@ -146,5 +142,3 @@ HTTP 캐시를 사용하여 얻을 수 있는 이점은 다음과 같다.
 - [The hidden components of Web Caching - freeCodeCamp](https://medium.freecodecamp.org/the-hidden-components-of-web-caching-970854fe2c49)
 - [HTTP Caching - Google Web Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 - [HTTP Caching - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
-
-</details>

@@ -1,17 +1,13 @@
-# Babel
-
-<details><summary>Babel이란?</summary>
-
 ## Babel이란?
 
 Babel은 자바스크립트 컴파일러<sup>[[1]](#babel1)</sup>로 ECMAScript 6 이상의 최신 자바스크립트 코드를 특정 브라우저 환경에서도 작동될 수 있도록 하위 호환 버전의 자바스크립트 코드로 변환한다. 플러그인을 사용하면 리액트의 JSX 문법이나 타입스크립트 문법도 변환이 가능하다.
 
 ```javascript
 // Babel 입력값: ES2015 arrow function
-[1, 2, 3].map(n => n + 1);
+[1, 2, 3].map((n) => n + 1);
 
 // Babel 출력값: ES5 equivalent
-[1, 2, 3].map(function(n) {
+[1, 2, 3].map(function (n) {
   return n + 1;
 });
 ```
@@ -20,8 +16,8 @@ Babel은 자바스크립트 컴파일러<sup>[[1]](#babel1)</sup>로 ECMAScript 
 
 ```javascript
 // babel/src/index.js
-odds = evens.map(v => v + 1);
-pairs = evens.map(v => ({ even: v, odd: v + 1 }));
+odds = evens.map((v) => v + 1);
+pairs = evens.map((v) => ({ even: v, odd: v + 1 }));
 nums = evens.map((v, i) => v + i);
 ```
 
@@ -46,19 +42,19 @@ babel.config.js는 babel 환경 설정 파일이다.
 ```javascript
 const presets = [
   [
-    '@babel/env',
+    "@babel/env",
     {
       // 지원하고 싶은 브라우저의 버전
       targets: {
-        ie: '10',
-        edge: '17',
-        firefox: '60',
-        chrome: '67',
-        safari: '11.1'
+        ie: "10",
+        edge: "17",
+        firefox: "60",
+        chrome: "67",
+        safari: "11.1",
       },
-      useBuiltIns: 'usage'
-    }
-  ]
+      useBuiltIns: "usage",
+    },
+  ],
 ];
 
 module.exports = { presets };
@@ -83,18 +79,18 @@ $npx babel src --out-dir lib // npm@5.2.0 이상부터 지원
 
 ```javascript
 // babel/lib/index.js
-'use strict';
+"use strict";
 
-odds = evens.map(function(v) {
+odds = evens.map(function (v) {
   return v + 1;
 });
-pairs = evens.map(function(v) {
+pairs = evens.map(function (v) {
   return {
     even: v,
-    odd: v + 1
+    odd: v + 1,
   };
 });
-nums = evens.map(function(v, i) {
+nums = evens.map(function (v, i) {
   return v + i;
 });
 ```
@@ -107,4 +103,3 @@ nums = evens.map(function(v, i) {
 ---
 
 1. <a name="babel1"></a> ECMAScript 6 이상의 명세에서 제시하는 고수준의 추상적 개념들을 브라우저에서 호환 가능한 저수준의 구현체로 변환한다는 점에 초점을 두어 Compiler라는 용어를 사용한다.
-   </details>

@@ -1,7 +1,3 @@
-# Design Pattern
-
-<details><summary>MVC</summary>
-
 ## MVC
 
 애플리케이션 로직을 모델(Model), 뷰(View), 컨트롤러(Controller) 3 가지의 역할로 분리한 소프트웨어 아키텍처 패턴이다.
@@ -26,5 +22,3 @@
 ### 참고 문서
 
 - [MVC architecture - MDN](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture)
-
-</details>

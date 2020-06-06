@@ -1,7 +1,3 @@
-<details><summary>SPA vs MPA</summary>
-
-## 개념 정의
-
 ### SPA
 
 - SPA는 매번 서버에서 전체 페이지를 다운로드하지 않고 초기 구동 시 필요한 모든 코드를 모두 다운로드한다.
@@ -51,9 +47,5 @@
 
 ## 참고 자료
 
-- [Single-page application - 위키피디아](https://en.wikipedia.org/wiki/Single-page_application#cite_note-12 'Single-page application')
-- [Single-page application vs. multiple-page application - Paweł Skólski at neoteric.eu/blog](https://neoteric.eu/blog/single-page-application-vs-multiple-page-application/?utm_source=medium.com&utm_medium=social&utm_content=neo&utm_campaign=blog 'Single-page application vs. multiple-page application')
-
----
-
-</details>
+- [Single-page application - 위키피디아](https://en.wikipedia.org/wiki/Single-page_application#cite_note-12 "Single-page application")
+- [Single-page application vs. multiple-page application - Paweł Skólski at neoteric.eu/blog](https://neoteric.eu/blog/single-page-application-vs-multiple-page-application/?utm_source=medium.com&utm_medium=social&utm_content=neo&utm_campaign=blog "Single-page application vs. multiple-page application")

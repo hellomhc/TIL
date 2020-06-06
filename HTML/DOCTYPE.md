@@ -1,7 +1,3 @@
-# HTML
-
-<details><summary>DOCTYPE</summary>
-
 ## DOCTYPE이란?
 
 웹브라우저가 HTML 문서를 읽어낼 때 그 문서가 어떤 문서 형식을 따르고 있는지 명시적으로 웹브라우저에 알리기 위한 방법이다. 웹브라우저는 문서 내의 DOCTYPE 선언 존재 유무와 선언 버전에 따라 레이아웃 엔진의 렌더링 모드를 선택하게 된다.
@@ -26,12 +22,12 @@
 
 ## 참고 자료
 
-- [Decument type definition - Wikipedia](https://en.wikipedia.org/wiki/DTD 'Decument type definition')
-- [Standard Generalized Markup Language - Wikipedia](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language 'Standard Generalized Markup Language')
-- [HTML <!DOCTYPE> Declaration - w3schools](https://www.w3schools.com/tags/tag_doctype.asp 'HTML <!DOCTYPE> Declaration')
-- [Quirks Mode and Standards Mode - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode 'Quirks Mode and Standards Mode')
-- [Activating Browser Modes with Doctype - Henri Sivonen](https://hsivonen.fi/doctype/ 'Activating Browser Modes with Doctype')
-- [W3C Recommendation 8.1.1 The DOCTYPE - W3C](https://www.w3.org/TR/html5/syntax.html#the-doctype 'W3C Recommendation 8.1.1 The DOCTYPE')
+- [Decument type definition - Wikipedia](https://en.wikipedia.org/wiki/DTD "Decument type definition")
+- [Standard Generalized Markup Language - Wikipedia](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language "Standard Generalized Markup Language")
+- [HTML <!DOCTYPE> Declaration - w3schools](https://www.w3schools.com/tags/tag_doctype.asp "HTML <!DOCTYPE> Declaration")
+- [Quirks Mode and Standards Mode - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode "Quirks Mode and Standards Mode")
+- [Activating Browser Modes with Doctype - Henri Sivonen](https://hsivonen.fi/doctype/ "Activating Browser Modes with Doctype")
+- [W3C Recommendation 8.1.1 The DOCTYPE - W3C](https://www.w3.org/TR/html5/syntax.html#the-doctype "W3C Recommendation 8.1.1 The DOCTYPE")
 
 ---
 
@@ -41,4 +37,3 @@
 4. <a name="doctype4"></a> SGML(Standard generalized markup language)란 전자문서의 표준화를 위하여 국제 표준위원회가 만든 마크업 언어이다. SGML 문서는 크게 사용 글자 등을 기술하는 선언부,문서의 구조를 기술하는 문서 형식 정의부(DTT), 그리고 실제 문서의 내용이 담긴 본문 3가지로 구성된다. 사용자가 태그의 형태와 의미, 위치 등을 결정하여 문서 안에서 사용할 수 있다.
 5. <a name="doctype5"></a> DTD(Document type definition, 문서 형식 정의)란 SGML계열의 마크업 언어에서 문서의 형식을 정의하는 것이다. SGML을 비롯해 HTML, XHTML, XML 등에서 사용된다.
 6. <a name="doctype6"></a>HTML5는 SGML 파서에 의존하지 않고 자체적으로 정의한 파싱 규칙에 따라 작동된다.
-   </details>
